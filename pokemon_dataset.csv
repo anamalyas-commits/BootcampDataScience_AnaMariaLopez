@@ -1,0 +1,11 @@
+name,height,weight,types
+bulbasaur,7,69,"grass, poison"
+ivysaur,10,130,"grass, poison"
+venusaur,20,1000,"grass, poison"
+charmander,6,85,fire
+charmeleon,11,190,fire
+charizard,17,905,"fire, flying"
+squirtle,5,90,water
+wartortle,10,225,water
+blastoise,16,855,water
+caterpie,3,29,bug
