@@ -1,4 +1,4 @@
-# Taller 04 – Reducción de Dimensiones y Clustering con Spotify
+# Taller 05 – Modelos de Regresión
 
 **Autora:** Ana María López  
 **Fecha:** Julio 2026  
@@ -7,41 +7,57 @@
 ---
 
 ## 🎯 Objetivo
-Aplicar técnicas de aprendizaje no supervisado para segmentar canciones de Spotify según sus características de audio.  
-El flujo de trabajo incluye: **Preprocesamiento → Reducción de dimensionalidad (PCA) → Clustering → Interpretación de resultados.**
+Desarrollar y comparar tres modelos de regresión para predecir el **precio de venta de automóviles usados** utilizando el dataset `cardekho.csv`.  
+El propósito es identificar cuál modelo ofrece el mejor desempeño en términos de precisión y capacidad de generalización.
 
 ---
 
 ## 📊 Dataset
-El archivo `spotify.csv` contiene información sobre canciones y artistas, incluyendo:
-- Popularidad del artista y de la canción  
-- Energía, danceability, valencia, tempo  
-- Características de audio como loudness, speechiness, acousticness  
+El archivo `cardekho.csv` contiene información sobre autos usados, incluyendo:
+- Marca y modelo  
+- Año de fabricación  
+- Tipo de combustible  
+- Transmisión  
+- Kilometraje  
+- Precio de venta  
 
 ---
 
 ## ⚙️ Metodología
-1. **Preprocesamiento:** limpieza y normalización de datos numéricos.  
-2. **Reducción de dimensionalidad (PCA):** extracción de los 3 componentes principales.  
-3. **Clustering:** aplicación de algoritmos K‑Means y DBSCAN.  
-4. **Evaluación:** comparación de resultados mediante el coeficiente *Silhouette*.  
-5. **Visualización:** gráficos 2D y 3D para interpretar los grupos.
+1. **Exploración y limpieza de datos:**  
+   - Revisión de valores nulos y tipos de variables.  
+   - Eliminación de columnas irrelevantes.  
+   - Codificación de variables categóricas con `get_dummies()`.  
+
+2. **Modelado:**  
+   Se entrenaron tres modelos de regresión:
+   - Regresión Lineal  
+   - Árbol de Decisión  
+   - Random Forest  
+
+3. **Evaluación:**  
+   Se compararon los modelos utilizando las métricas:
+   - Error absoluto medio (MAE)  
+   - Error cuadrático medio (MSE)  
+   - Coeficiente de determinación (R²)
 
 ---
 
 ## 📈 Resultados
-| Modelo | Silhouette Score | Observaciones |
-|---------|------------------|----------------|
-| K‑Means | 0.65 | Segmentación estable y clara |
-| DBSCAN | 0.48 | Identifica outliers y canciones únicas |
+| Modelo | R² | MAE | MSE |
+|---------|----|-----|-----|
+| Regresión Lineal | 0.85 | — | — |
+| Árbol de Decisión | 0.97 | — | — |
+| Random Forest | **0.975** | — | — |
+
+El modelo **Random Forest** obtuvo el mejor desempeño, mostrando una excelente capacidad para capturar relaciones no lineales entre las variables.
 
 ---
 
 ## 🧠 Conclusiones
-- **K‑Means** ofrece una agrupación más consistente para este dataset.  
-- **DBSCAN** es útil para detectar canciones con características atípicas.  
-- Los clusters reflejan distintos estilos musicales según energía, tempo y valencia.  
-- Comercialmente, estos grupos pueden servir para sistemas de recomendación o curación de playlists.
+- Los modelos basados en árboles (Decision Tree y Random Forest) superan a la Regresión Lineal en precisión.  
+- Random Forest es el más robusto y generalizable para este tipo de datos.  
+- La Regresión Lineal sigue siendo útil como modelo base por su simplicidad y facilidad de interpretación.  
 
 ---
 
@@ -49,7 +65,7 @@ El archivo `spotify.csv` contiene información sobre canciones y artistas, inclu
 - Python 3.13  
 - Pandas, NumPy  
 - Matplotlib, Seaborn  
-- Scikit‑learn  
+- Scikit-learn  
 
 ---
 
@@ -59,4 +75,4 @@ El archivo `spotify.csv` contiene información sobre canciones y artistas, inclu
 
 ## 💬 Autor
 Desarrollado por **Ana María López**  
-Bootcamp Data Science – UNITEC
+Bootcamp Data Science – UNITEC  
